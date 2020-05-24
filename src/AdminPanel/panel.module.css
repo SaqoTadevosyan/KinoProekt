@@ -1,0 +1,15 @@
+.firstcontainer{
+   
+    
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+.container{
+ 
+   
+    display: flex;
+    justify-content: flex-start;
+    
+}

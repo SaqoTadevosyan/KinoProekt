@@ -1,0 +1,130 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    align-items: center;
+
+} 
+.container img{
+    height: 550px;
+    width: 370px;
+}
+.category{
+    color: #ff4444;
+text-transform: uppercase;
+font-size: 13px;
+    font-weight: 700;
+}
+.firstBlock{
+    display: flex;
+   
+}
+
+.info{
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.details{
+    display: flex;
+    
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.info .name{
+    color: black;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+.infokey{
+    color: rgb(102, 102, 102);
+    font-weight: 600;
+    font-size: 15px;
+}
+.infokey i{
+    color: red;
+    margin-right: 10px;
+}
+.infovalue{
+    margin-left: 10px;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+}
+.infoblock{
+    display: flex;
+}
+.info2{
+    display: flex;
+    flex-direction: column;
+}
+.about{
+    width: 700px;
+}
+.about p{
+  font-size: 13px;
+  line-height: 22.1px;
+}
+.player{
+    display: flex;
+   
+}
+.vidio{
+    position: absolute;
+}
+
+
+.secondBlock{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    width: 100%;
+    height: 1100px;
+    background-image: url(http://www.demo.gloriathemes.com/wp/themovie/wp-content/uploads/2017/03/trailer-bg.jpg?id=69) !important ;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff4444;
+    font-size: 36px;
+}
+.title button{
+    padding: 10px 50px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #474747;
+    color: #474747;
+    margin-right: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+.title h3{
+    color: white;
+    text-transform: uppercase;
+}
+.thirdBlock{
+    width: 1100px;
+}
+.actorsList{
+    display: flex;
+    justify-content: space-between;
+}
+.actorsList img{
+    width: 262px;
+    height: 341px;
+}
+.actor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.actor h4{
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+    
+}
