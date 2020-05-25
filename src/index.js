@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <ThemeContextProvider>
-    
+
   
   <React.StrictMode>
     <App />
