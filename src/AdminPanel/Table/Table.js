@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Input , Select } from "antd";
-import fire from "../fire/config";
+import fire from "../../fire/config";
 import style from "./table.module.scss";
 import DButton from "./DButton";
 class Table extends Component {

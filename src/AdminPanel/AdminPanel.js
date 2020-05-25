@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import style from "./panel.module.css";
+
 import fire from "../fire/config";
-import ProfileStyle from "./Profilstyle.module.scss";
+import style from "./Panel.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ThemeContextConsumer } from "../themeContext";
 import { Input  } from "antd";
-import Prew from "./Prew";
-import { faUser, faEdit } from "@fortawesome/free-regular-svg-icons";
-import { faPen, faPlus } from "@fortawesome/free-solid-svg-icons";
+
+import {  faEdit } from "@fortawesome/free-regular-svg-icons";
+import {  faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Select } from 'antd';
-import Table from "./Table"
+import Table from "./Table/Table"
 
 class AdminPanel extends Component {
   state = {
@@ -87,14 +87,14 @@ this.setState({film:film})
   };
   render() {
     return (
-      <div className={ProfileStyle.container}>
+      <div className={style.container}>
         <div id="logo"></div>
-        <div className={ProfileStyle.leftbox}>
-          <nav className={ProfileStyle.nav}>
+        <div className={style.leftbox}>
+          <nav className={style.nav}>
             <a name="profile" onClick={()=>{
               this.setState({profile:true})
               this.setState({payment:false})
-            }} className={ProfileStyle.active}>
+            }} className={style.active}>
               <i className="fa fa-user">
                 <FontAwesomeIcon icon={faPlus} />
               </i>
@@ -111,10 +111,11 @@ this.setState({film:film})
             </a>
           </nav>
         </div>
-        <div className={ProfileStyle.rightbox}>
-        <div className={this.state.profile ?  ProfileStyle.profile:ProfileStyle.noshow}>
-          <div className={style.container}>
-            <div className={style.firstcontainer} style={{marginTop:"15px"}}>
+        <div className={style.rightbox}>
+        <div className={this.state.profile ?  style.profile:style.noshow}>
+          <div className={style.container55}>
+            <div className={style.firstContainer} style={{marginTop:"15px"}}>
+
               <Input 
              style={{marginBottom:"15px"}}
                 
@@ -166,8 +167,11 @@ this.setState({film:film})
                   placeholder="Info"
                   onChange={this.handleChange.bind(this)}
                 />
-                <Input
-                style={{marginBottom:"15px"}}
+               </div>
+           
+            <div className={style.secondContainer}>
+            <Input
+                style={{marginTop:"15px",marginBottom:"15px"}}
                   
                   name="country"
                   placeholder="Country"
@@ -216,7 +220,7 @@ this.setState({film:film})
              
                 {this.state.film.cast.map((elem, index) => {
                   return (
-                    <div className={ProfileStyle.cast} style={{marginBottom:"15px"}}>
+                    <div className={style.cast} style={{marginBottom:"15px"}}>
                       
                       <Input style={{marginBottom:"15px"}} placeholder="passenger name" style={{ width: '50%' }}
                         onChange={this.handleSelectCast.bind(this)}
@@ -230,7 +234,7 @@ this.setState({film:film})
                         id={index}
                         placeholder="personaj"
                       />
-                       <button
+                       <button className={style.minibtn}
                   onClick={() => {
                     let tmp = this.state.film.cast;
                     tmp.push(["cast"]);
@@ -245,7 +249,7 @@ this.setState({film:film})
                
                 <ThemeContextConsumer>
                   {(context) => (
-                    <button 
+                    <button  className={style.btn}
                     
                       onClick={this.createData.bind(this, context.film.length)}
                     >
@@ -254,11 +258,12 @@ this.setState({film:film})
                   )}
                 </ThemeContextConsumer>
               </div>
+              </div>
             </div>
             </div>
             <div
               className={
-                this.state.payment ? ProfileStyle.payment : ProfileStyle.noshow
+                this.state.payment ? style.payment : style.noshow
               }
             >
               <Table/>
@@ -267,14 +272,14 @@ this.setState({film:film})
             <div
               className={
                 this.state.settings
-                  ? ProfileStyle.settings
-                  : ProfileStyle.noshow
+                  ? style.settings
+                  : style.noshow
               }
             >
               <Table/>
           </div>
         </div>
-        </div>
+        
      
     );
   }
