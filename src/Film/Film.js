@@ -30,7 +30,7 @@ class Film extends Component {
     let db = [];
     fire
       .database()
-      .ref("/0" )
+      .ref("/"+this.props.match.params.id )
       .once("value")
       .then((snapshot) => {
         db = snapshot.val();

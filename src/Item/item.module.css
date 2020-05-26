@@ -1,6 +1,6 @@
 .item{
     margin-top: 70px;
-background: rgb(255, 255, 255);
+background: #f6f6f6;
     height: 480px;
     width: 265px;
     border-radius: 10px;
@@ -43,7 +43,7 @@ background: rgb(255, 255, 255);
 }
 .item .info{
     display: flex;
-    justify-content: space-around;
+  
     align-items: center;
 }
 
@@ -78,7 +78,7 @@ background: rgb(255, 255, 255);
 }
 .ratingStar{
    float: left;
-    background: white;
+    background:#f6f6f6;
     margin-left: 0;
 }
 

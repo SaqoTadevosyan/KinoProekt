@@ -30,7 +30,7 @@ return  <i  key={index}><FontAwesomeIcon icon={faStar}/> </i>
 
             </div>
             </div>
-            <button><FontAwesomeIcon icon={faShoppingCart} /></button>
+          
         </div>
  
    </div>

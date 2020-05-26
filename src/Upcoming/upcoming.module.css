@@ -39,7 +39,7 @@
 }
 
 .active{
-    padding-top: 15px;
+    padding: 10px 5px;
     color:white ;
     background: rgb(255, 68, 68);
     
@@ -50,17 +50,23 @@
 }
 
 .pasive{
-    padding-top: 15px;
-    color: rgb(121, 121, 121);
-    background: white;
+    padding: 10px 5px;
+    font-weight: 600;
     
+    color: rgb(121, 121, 121);
+    background: #f6f6f6;
+    text-transform: uppercase;
+    font-weight: 600;
     text-decoration: none;
     width: 170px;
     height: 40px;
 }
 
 .pasive:hover{
-    padding-top: 15px;
+    padding: 10px 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+  
     color: white;
     background-color: rgb(255, 68, 68);;
     

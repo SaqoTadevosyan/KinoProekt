@@ -10,6 +10,7 @@ import {  faEdit } from "@fortawesome/free-regular-svg-icons";
 import {  faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Select } from 'antd';
 import Table from "./Table/Table"
+import UploadButton from "./UploadButton";
 
 class AdminPanel extends Component {
   state = {
@@ -106,9 +107,7 @@ this.setState({film:film})
               <i className="fa fa-credit-card">  <FontAwesomeIcon icon={faEdit} /></i>
             </a>
 
-            <a name="settings">
-              <i className="fa fa-cog"></i>
-            </a>
+            
           </nav>
         </div>
         <div className={style.rightbox}>
@@ -211,6 +210,8 @@ this.setState({film:film})
                         <option  value="comedy">Comedy</option>
                         <option  value="biography">Biography</option>
                         <option  value="sport">Sport</option>
+                        <option  value="action">Action</option>
+                        <option  value="family">Family</option>
   </Select>
                   
 
@@ -249,12 +250,12 @@ this.setState({film:film})
                
                 <ThemeContextConsumer>
                   {(context) => (
-                    <button  className={style.btn}
+                    <a href="/"  className={style.btn}
                     
                       onClick={this.createData.bind(this, context.film.length)}
                     >
                       Add
-                    </button>
+                    </a >
                   )}
                 </ThemeContextConsumer>
               </div>
@@ -269,15 +270,7 @@ this.setState({film:film})
               <Table/>
             </div>
 
-            <div
-              className={
-                this.state.settings
-                  ? style.settings
-                  : style.noshow
-              }
-            >
-              <Table/>
-          </div>
+            
         </div>
         
      

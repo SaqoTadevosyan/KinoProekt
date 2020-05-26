@@ -77,8 +77,9 @@ return(
     
     <div className={style.filmlist}>
        
-{data.length>1 ?   data.map((elem,index)=>{
-return <Item info={elem} id={index}/>
+{data.length>1 ?   data.map((elem)=>{
+    
+return <Item info={elem} id={elem.id}/>
 }):null}
    
   
