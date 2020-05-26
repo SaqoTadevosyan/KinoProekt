@@ -5,20 +5,16 @@ import Item from '../Item/Item';
 
 export default function Sort(props){
 
-const [data, setdata] = useState([props.filmList]);
+const [data, setdata] = useState(props.filmList[props.pageNumber]);
+
 useEffect(() => {
-    setdata(props.filmList)
-    return () => {
-        
-    };
-}, []);
-useEffect(() => {
-   setdata(props.filmList)
+    console.log(props.pageNumber)
+   setdata(props.filmList[props.pageNumber])
  
-   console.log(data,props.filmList)
+   console.log(props.filmList)
    if(props.sortType=="new" ){
       
-       let newData=[...props.filmList]
+       let newData=[...props.filmList[props.pageNumber]]
    newData.sort((a,b)=>{
       
        if(new Date(a.time)<new Date(b.time)){
@@ -36,7 +32,7 @@ useEffect(() => {
 }
 if(props.sortType=="rating"){
       
-    let newData=[...props.filmList]
+    let newData=[...props.filmList[props.pageNumber]]
 newData.sort((a,b)=>{
    
     if(new Date(a.rating.length)<new Date(b.rating.length)){
@@ -54,7 +50,7 @@ setdata(newData)
 }
 if(props.sortType=="views"){
       
-    let newData=[...props.filmList]
+    let newData=[...props.filmList[props.pageNumber]]
 newData.sort((a,b)=>{
    
     if(new Date(a.views)<new Date(b.views)){
@@ -71,13 +67,13 @@ newData.sort((a,b)=>{
 setdata(newData)
 }
     return 
-}, [props.filmList,props.sortType]);
+}, [props.filmList,props.sortType,props.pageNumber]);
 
 return(
     
     <div className={style.filmlist}>
-       
-{data.length>1 ?   data.map((elem)=>{
+       {console.log(data)}
+{data.length>0 ?   data.map((elem)=>{
     
 return <Item info={elem} id={elem.id}/>
 }):null}
