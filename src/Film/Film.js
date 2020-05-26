@@ -123,9 +123,9 @@ class Film extends Component {
                   </div>
 
                   <div className={style.infovalue}>
-                    { this.state.data.rating ?   this.state.data.rating.map((elem) => {
+                    { this.state.data.rating ?   this.state.data.rating.map((elem,index) => {
                       return (
-                        <i>
+                        <i key={index}>
                           <FontAwesomeIcon icon={faStar} />
                         </i>
                       );
@@ -179,7 +179,7 @@ class Film extends Component {
           <div className={style.actorsList}>
             {this.state.data.cast ?   this.state.data.cast.map((elem, index) => {
               return (
-                <div className={style.actor}>
+                <div key={index} className={style.actor}>
                   <div>
                     <img src={elem[2] || "http://localhost:3000/up8.jpg"}></img>
                   </div>

@@ -24,6 +24,9 @@ class Table extends Component {
   deleteItem = (id) => {
   let  data=this.state.data
     data.splice(id,1)
+    for(let i=id;i<data.length;i++){
+      data[id].id=i
+    }
     fire
     .database()
     .ref("/").set(data)
@@ -82,44 +85,44 @@ this.setState({updateObj:obj})
        
           {this.state.data.map((elem, index) => {
             return (
-                <li className={`${style.table_row}`}>
+                <li key={index} className={`${style.table_row}`}>
             
-            <div className={`${style.col} ${style.col_1}`} data-label="id">
+            <div key={index} className={`${style.col} ${style.col_1}`} data-label="id">
                  
-                    <Input style={{border:"none"}} id="id" onChange={this.handleChange} value={index} />
+                    <Input key={index+1} style={{border:"none"}} id="id" onChange={this.handleChange} value={index} />
               
                </div>
                <div className={`${style.col} ${style.col_2}`} data-label="Name">
                   {this.state.edit == index ? (
-                    <Input id="name" onChange={this.handleChange} placeholder={elem.name} />
+                    <Input key={index+2} id="name" onChange={this.handleChange} placeholder={elem.name} />
                   ) : (
-                    <Input style={{border:"none"}} value={elem.name} />
+                    <Input key={index+2}  style={{border:"none"}} value={elem.name} />
                   )}
                 </div>
                 <div className={`${style.col} ${style.col_3}`} data-label="Age">
                   {this.state.edit == index ? (
-                    <Input id="age" onChange={this.handleChange}  placeholder={elem.age} />
+                    <Input key={index+3}  id="age" onChange={this.handleChange}  placeholder={elem.age} />
                   ) : (
-                    <Input style={{border:"none"}} value={elem.age} />
+                    <Input key={index+3}  style={{border:"none"}} value={elem.age} />
                   )}
                 </div>
                 <div className={`${style.col} ${style.col_4}`} data-label="img">
                   {this.state.edit == index ? (
-                    <Input id="img" onChange={this.handleChange}  placeholder={elem.img} />
+                    <Input key={index+4}  id="img" onChange={this.handleChange}  placeholder={elem.img} />
                   ) : (
-                    <Input style={{border:"none"}} value={elem.img} />
+                    <Input key={index+4}  style={{border:"none"}} value={elem.img} />
                   )}
                 </div>
                 <div className={`${style.col} ${style.col_5}`} data-label="Url">
                 {this.state.edit == index ? (
-                    <Input id="src" onChange={this.handleChange}  placeholder={elem.src} />
+                    <Input key={index+5}  id="src" onChange={this.handleChange}  placeholder={elem.src} />
                   ) : (
-                    <Input style={{border:"none"}} value={elem.src} />
+                    <Input key={index+5}  style={{border:"none"}} value={elem.src} />
                   )}
                 </div>
                 <div className={`${style.col} ${style.col_6}`} data-label="Category">
                 {this.state.edit == index ? (
-                    <Select id="category" mode="multiple"
+                    <Select  key={index+6}  id="category" mode="multiple"
                     style={{ width: '100%' }}
                     placeholder="Please select"
                     defaultValue={elem.category}  onChange={this.selectChange} placeholder={elem.category} >
@@ -127,27 +130,27 @@ this.setState({updateObj:obj})
                         <option  value="comedy">comedy</option>
                     </Select>
                   ) : (
-                    <Input style={{border:"none"}} value={elem.category} />
+                    <Input key={index+7}  style={{border:"none"}} value={elem.category} />
                   )}
                 </div>
                 <div className={`${style.col} ${style.col_7}`} data-label="Rating">
                 {this.state.edit == index ? (
-                    <Input id="rating" onChange={this.handleChange}  placeholder={elem.rating.length} />
+                    <Input key={index+7}  id="rating" onChange={this.handleChange}  placeholder={elem.rating.length} />
                   ) : (
-                    <Input style={{border:"none"}} value={elem.rating.length} />
+                    <Input key={index+7}  style={{border:"none"}} value={elem.rating.length} />
                   )}
                 </div>
                 <div className={`${style.col} ${style.col_8}`} data-label="Year">
                 {this.state.edit == index ? (
-                    <Input id="year" onChange={this.handleChange}  placeholder={elem.year} />
+                    <Input key={index+8}  id="year" onChange={this.handleChange}  placeholder={elem.year} />
                   ) : (
-                    <Input style={{border:"none"}} value={elem.year} />
+                    <Input key={index+8}  style={{border:"none"}} value={elem.year} />
                   )}
                 </div>
                 <div className={`${style.col} ${style.col_9}`} data-label="Operation">
                 {this.state.edit == index ? (
                     <div>
-                      <DButton name="Save"  func={this.updateItem.bind(this,index)} />{" "}
+                      <DButton  key={index+9}  name="Save"  func={this.updateItem.bind(this,index)} />{" "}
                       <a
                         onClick={() => {
                           this.setState({ edit: null });
@@ -157,7 +160,7 @@ this.setState({updateObj:obj})
                       </a>
                     </div>
                   ) : (
-                    <div>
+                    <div  key={index+9} >
                       <a
                         onClick={() => {
                           this.setState({ edit: index });

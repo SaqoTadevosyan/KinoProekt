@@ -33,7 +33,7 @@
     border-bottom-right-radius: 10px;
 }
 
-.filmlist{
+.filmList{
     display: grid;
     grid-template-columns: 300px 300px 300px 300px;
 }
@@ -74,4 +74,9 @@
     text-decoration: none;
     width: 170px;
     height: 40px;
+}
+
+.filmContainer{
+    display: flex;
+    flex-direction: column;
 }

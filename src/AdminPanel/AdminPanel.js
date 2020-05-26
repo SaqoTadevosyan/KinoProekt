@@ -221,18 +221,20 @@ this.setState({film:film})
              
                 {this.state.film.cast.map((elem, index) => {
                   return (
-                    <div className={style.cast} style={{marginBottom:"15px"}}>
+                    <div className={style.cast} key={index} style={{marginBottom:"15px"}}>
                       
                       <Input style={{marginBottom:"15px"}} placeholder="passenger name" style={{ width: '50%' }}
                         onChange={this.handleSelectCast.bind(this)}
                         name="actress"
                         id={index}
+                        key={index}
                         placeholder="actress"
                       />
                          <Input style={{marginBottom:"15px"}} placeholder="passenger name" style={{ width: '50%' }}
                         onChange={this.handleSelectCast.bind(this)}
                         name="personaj"
                         id={index}
+                        key={index}
                         placeholder="personaj"
                       />
                        <button className={style.minibtn}
